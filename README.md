@@ -1,2 +1,2 @@
 # chinese-website
-HTML, CSS, JavaScript
+Uses HTML, CSS, JavaScript; created for Chinese volunteer and website has retired use

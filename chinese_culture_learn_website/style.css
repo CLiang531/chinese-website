@@ -1,0 +1,348 @@
+:root {
+    --color-bg: #ffffff;
+    --color-text-main: #000000;
+    --color-primary: #ffff00;
+    --wrapper-height: 87vh;
+    --image-max-width: 300px;
+    --image-margin: 3rem;
+    --font-family: "HK Grotesk";
+    --font-family-header: "HK Grotesk";
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  
+  /* Imported Lato and Sofia Pro fonts in regular and bold */
+  @font-face {
+    font-family: Lato;
+    src: url("https://cdn.glitch.global/019ac506-d4d7-4671-af06-2133fff4ad54/Lato-Regular.ttf?v=1686716480813")
+      format("opentype");
+  }
+  @font-face {
+    font-family: Lato;
+    font-weight: bold;
+    src: url("https://cdn.glitch.global/019ac506-d4d7-4671-af06-2133fff4ad54/Lato-Bold.ttf?v=1686716479728")
+      format("opentype");
+  }
+  @font-face {
+    font-family: SofiaPro;
+    src: url("https://cdn.glitch.global/019ac506-d4d7-4671-af06-2133fff4ad54/sofiapro-light.otf?v=1686716813414")
+      format("opentype");
+  }
+  @font-face {
+    font-family: SofiaPro;
+    font-weight: bold;
+    src: url("https://cdn.glitch.global/019ac506-d4d7-4671-af06-2133fff4ad54/SofiaProBold.ttf?v=1686716966480")
+      format("opentype");
+  }
+  
+  /* Animations for fading left and fading right*/
+  .fade-left{
+    opacity: 0;
+    animation: fade-left 2s ease-in;
+    opacity: 1;
+  }
+  .fade-right{
+    opacity: 0;
+    animation: fade-right 2s ease-in;
+    opacity: 1;
+  }
+  @keyframes fade-left {
+    0% {
+      transform: translateX(-500px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-right {
+    0% {
+      transform: translateX(500px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Added border around the left and right of the website for decoration */
+  .border{
+    border: min(100px, 10vw) solid;
+    border-image: url(https://cdn.glitch.global/953d561d-7854-4385-b485-b4dc13981631/Group%2018.png?v=1686893151435)
+      755 repeat;
+  }
+  /* homepage formatting (title and text have text shadow) */
+  #homepage {
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)),
+      url(https://cdn.glitch.global/953d561d-7854-4385-b485-b4dc13981631/Chinese_IMG%20Collage.png?v=1686883213520);
+    background-size: cover;
+    color: white;
+    justify-content:center;
+    margin-left: min(5vw, 50px);
+    margin-top: min(10vw, 100px);
+    overflow-y:hidden;
+  }
+  #homepage-text{
+    width: min(50vw, 600px); 
+    text-shadow: 1px 1px black;
+    margin-bottom: max(2vw, 20px);
+  }
+  #title-bar{
+    text-shadow: min(1vw, 6px) min(1vw, 6px) black;
+    width: min(60vw, 750px); 
+    margin-top: max(5vw,50px);
+    line-height: 1em;
+    font-size: min(15vw, 100px);
+  }
+  
+  /* Link format, gets rid of underline */
+  a{
+    color:#ffffff;
+    text-decoration:none;
+  }
+  
+  /* navigation bar basic styling */
+  .navbar {
+    position:fixed;
+    z-index:3;
+    top:0;
+    left:0;
+    width: 100vw;
+    vertical-align:middle;
+    background-color: #c3272b;
+    line-height:150%;
+  }
+  /* links inside the navigation bar */
+  .navbar a {
+    float: right;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  /* Change the style on links when hovered */
+  .navbar a:hover {
+    background-color:#ED5736;
+    font-weight:bold;
+    transition-duration:1s;
+  }
+  
+  /* right side margin */
+  .right{
+    margin-right:15px;
+  }
+  
+  /* typical formatting for body html, hide overflow x but scroll to the y */
+  body {
+    font-family: Lato;
+    background-color: var(--color-bg);
+    margin:0px;
+    overflow-x:hidden;
+    overflow-y:scroll;
+  }
+  
+  /* adaptible components (flexboxes) for margins to make things fit on all screens */
+  .wrapper {
+    min-height: var(--wrapper-height);
+    display: grid;
+    margin-top: min(10vw, 25px);
+  
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    margin-left: max(2vw,25px);
+    margin-right: max(2vw,25px);
+  }
+  
+  /* vw and px for different screens */
+  .title {
+    color: #c3272b;
+    font-family: SofiaPro;
+    font-style: normal;
+    font-weight: bold;
+    font-size: min(10vw, 80px);
+    margin-bottom: 0px;
+    margin-top:0px;
+    line-height: 1em;
+  }
+  
+  
+  /* Initial state of text (not visible), Transition to appear in 2 seconds */
+  .overlay {
+    transition: 2s ease;
+    opacity:0;
+    color: white;
+    font-size: min(5vw,40px);
+    text-shadow: 3px 3px 5px #ED5736;
+    font-variant: small-caps;
+    position:absolute;
+    bottom:40%;
+    left:5%;
+  }
+  
+  .expand{
+    float: left;
+    transition: width 2s;
+    position:relative;
+    margin:10px;
+  }
+  /* Transistion the width in 2 seconds */
+  .expand img{
+    width: min(55vw, 500px);
+    transition: width 2s;
+  }
+  .expand:hover img{
+    width: min(60vw, 550px);
+  }
+  .expand:hover .overlay{
+    opacity: 1;
+  }
+  
+  /* normal text format for text size */
+  p{
+    font-size: min(3.5vw, 16px);
+  }
+  
+  /* button formatting and also transitioning during hover */
+  button{
+    font-family: SofiaPro;
+    font-weight:bold;
+    font-size: min(18px, 3vw);
+    background-color: #C3272B;
+    color: #ffffff;
+    border:5px solid #C3272B;
+    padding: 8px min(20px, 1vw);
+    transition-duration:1s;
+    letter-spacing:0.5px;
+    margin:min(5px, 1vw);
+  }
+  button:hover{
+    text-decoration: underline;
+    background-color: #ffffff; 
+    color: #C3272B;
+  }
+  
+  /* flexbox formatting so things adapt to go underneath if they overflow on the x-axis */
+  .flex-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    font-weight:bold;
+  }
+  .flex-container p{
+    font-weight:normal;
+    margin-top:0px;
+    margin-left:20px;
+    margin-right:20px;
+    width: min(55vw, 450px);
+  }
+  .checks{
+    padding-left:50px;
+  }
+  .question-padding{
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+  /* video width format */
+  video{
+    width: min(55vw, 500px);
+    z-index:1;
+  }
+  
+  /* button formatting specific to home page */
+  #h-page-button{
+    font-size: 18px;
+    margin:0px;
+    padding: 15px 32px;
+  }
+  #h-page-button:hover{
+    background-color: rgba(0,0,0, 0.5);
+  }
+  
+  /* button formatting for jump to top button at recordings page*/
+  #r-button{
+    position:fixed;
+    bottom:min(25px,2vw); 
+    right:min(100px,10vw); 
+    z-index:2;
+  }
+  
+  /* vw and px for different screens for the headers */
+  h2 {
+    margin-top:min(50px, 5vw);
+    color: #dc3023;
+    font-family: SofiaPro;
+    font-size: min(5vw, 45px);
+    margin-bottom:0px;
+  }
+  h3{
+    margin-top:min(5vw,20px);
+    margin-left:min(75px,4vw);
+    margin-right:5px;
+    margin-bottom:5px;
+    color:#ED5736;
+    font-size: min(4vw, 30px);
+  }
+
+  #search{
+    border-radius: 5px;
+    border-color:#C3272B;
+    width:min(750px,35vw);
+  }
+
+
+  /* activities page game selection panel */
+.activity-panel{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  gap: 20px;
+  font-family:cursive;
+}
+.activity-item {
+  border-radius: 20px;
+  text-align: center;
+  border-style: dotted;
+  border-color: #ED5736;
+  width: min(35vw, 400px);
+  height: min(15vw, 300px);
+}
+.activity-header{
+  padding-top: calc(min(15vw, 300px)/2 - 25px);
+  color: #000000;
+  font-size: min(5vw,50px);
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight:bold;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+.activity-item:hover{
+  cursor:pointer;
+}
+.activity-item:hover .activity-header{
+  cursor:pointer;
+  color:#C3272B;
+  font-size:60px;
+  padding-top: calc(min(15vw, 300px)/2 - 60px/2);
+  transition: 2s;
+}
+.activity-q {
+  border-radius: 20px;
+  border-style: dotted;
+  border-color: #ED5736;
+  border-width: 8px;
+  text-align: left;
+  width: 60%;
+  margin: auto;
+}

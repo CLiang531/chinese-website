@@ -1,0 +1,89 @@
+<!-- Short description of entire website and its purpose as well as the categories -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="https://cdn.glitch.global/953d561d-7854-4385-b485-b4dc13981631/Group%2015_red.png?v=1686889356563"
+    />
+
+    <title>Chinese Culture Presentations - Activities</title>
+
+    <!-- Add in / when back on Glitch, on computer remove -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Description and keywords for SEO -->
+    <meta
+      name="description"
+      content="Website provides a multitude of Chinese culture presentation videos made to educate and also provide examples to AP Chinese students."
+    />
+    <meta
+      name="keywords"
+      content="Chinese culture, Ethnic culture, Learning Chinese, China"
+    />
+
+    <script src="script.js" defer></script>
+    <script src="activities.js" defer></script>
+  </head>
+  <!-- Borders of website incorporated! -->
+  <body class="border">
+    <!-- navigation bar -->
+    <div class="navbar">
+      <a class="right" href="about.html">About</a>
+      <a href="activities.html">Activities</a>
+      <a href="videos.html">Videos</a>
+      <a href="index.html">Home</a>
+    </div>
+
+    <div class="wrapper">
+      <div class="content" role="main">
+        <!-- Description of website -->
+        <h1 class="title fade-left">Activities</h1>
+        <p class="fade-left">
+          There is a lot of content on this website, and so a series of mini
+          activities and games were created to help digest the information on
+          the website better!
+          <br />
+        </p>
+        <p class="fade-right">
+          To get started, select one or more categories that you would like
+          included in the following activities:
+          <br />
+        </p>
+        <form class="checks fade-left">
+          <div><input type="checkbox" id="holiday-cat" /> Holidays</div>
+          <div><input type="checkbox" id="cuisine-cat" /> Cuisine</div>
+          <div><input type="checkbox" id="famous-cat" /> Famous Figures</div>
+          <div>
+            <input type="checkbox" id="architecture-cat" /> Architecture
+          </div>
+          <div><input type="checkbox" id="ethnic-cat" /> Ethnic Groups</div>
+          <div>
+            <input type="checkbox" id="classics-cat" /> Four Great Classics
+          </div>
+          <div><input type="checkbox" id="other-cat" /> Other</div>
+        </form>
+        <p class="fade-right">Now, select the activity you would like to do:</p>
+        <p id="msg"></p>
+        <div id="game" class="activity-panel fade-left">
+          <!--             <div class = "activity-item">
+              <input type="button" id="matching" class="activity-header" value="Matching">
+            </div> -->
+          <!-- <div class = "activity-item">
+              <input type="button" id="crossword" class="activity-header" value="Crossword">
+            </div> -->
+          <div class="activity-item">
+            <input
+              type="button"
+              id="questions"
+              class="activity-header"
+              value="Questions"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
